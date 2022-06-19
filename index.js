@@ -31,7 +31,7 @@ app
   .get("/", (req, res) => {
     res.json({ api: "api for sending emails" });
   })
-  .post("/email", (req, res, next) => {
+  .post("/", (req, res, next) => {
     console.log(req.query);
     var data = {};
     data.email = req.query.email;
