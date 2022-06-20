@@ -25,6 +25,7 @@ var mailOptions = {
   to: "rishabhsingh2305@gmail.com",
   subject: "Sending Email using Node.js",
   text: "",
+  html: "<h1>Hello</h1>",
 };
 
 app
@@ -33,12 +34,26 @@ app
   })
   .post("/", (req, res, next) => {
     console.log(req.query);
-    var data = {};
+    const data = {};
     data.email = req.query.email;
     data.message = req.query.message;
     data.phone = req.query.phone;
     data.name = req.query.name;
-    mailOptions.text = ` Name: ${data.name} \n Email:${data.email} \n Phone:${data.phone} \n Message:${data.message}`;
+
+    //assigning data
+    mailOptions.from = data.email;
+
+    mailOptions.html = `
+    <h2>Contact Details</h2>
+    <li> Name  : ${data.name} </li>
+    <li> Phone : ${data.phone}</li>
+    <li> Email : ${data.email}</li>
+
+    <h2>Message</h2>
+    <p>
+    ${data.message}
+    </p>
+    `;
 
     // console.log(mailOptions);
     // res.status(200).json(data);
