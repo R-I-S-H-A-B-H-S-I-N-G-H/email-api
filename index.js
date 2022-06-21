@@ -23,7 +23,7 @@ var transporter = nodemailer.createTransport({
 var mailOptions = {
   from: "",
   to: "rishabhsingh2305@gmail.com",
-  subject: "Sending Email using Node.js",
+  subject: "Sending Email via App create by Rishabh Singh(Internshala)",
   text: "",
   html: "<h1>Hello</h1>",
 };
