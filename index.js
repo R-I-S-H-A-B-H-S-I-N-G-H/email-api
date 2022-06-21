@@ -22,7 +22,7 @@ var transporter = nodemailer.createTransport({
 
 var mailOptions = {
   from: "",
-  to: "rishabhsingh23052@gmail.com",
+  to: "info@redpositive.in",
   subject: "Sending Email via App create by Rishabh Singh(Internshala)",
   text: "",
   html: "<h1>Hello</h1>",
