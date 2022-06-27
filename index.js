@@ -5,7 +5,8 @@ const port = process.env.PORT || 3000;
 app.use(express.json());
 
 // app.use(express.urlencoded({ extended: true }));
-
+console.log();
+app.use(express.static(`${__dirname}"\public"`));
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
 });
@@ -71,5 +72,5 @@ app
 
 //404
 app.use((req, res) => {
-  res.status(404).json("Not found");
+  res.sendFile(__dirname + "/public/404.html");
 });
